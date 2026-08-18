@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery · Dollhaus Royale</title>
+    <meta name="description" content="A gallery of past Dollhaus Royale Shih Tzu puppies and their families." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- ========================================
+    HEADER
+    ======================================== -->
+    <header>
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">
+                <img src="dr-logo.png" class="dr-crest" alt="Dollhaus Royale crest" />
+                Dollhaus <span>Royale</span>
+            </a>
+
+            <div class="nav-actions">
+                <button class="icon-btn" id="searchToggle" aria-label="Search">
+                    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
+                </button>
+                <a href="puppy-application.html" class="nav-apply">Apply For A Puppy</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Search panel -->
+        <div class="search-panel" id="searchPanel">
+            <div class="container search-panel-inner">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
+                <input type="text" id="puppySearch" placeholder="Search puppies by name, color, or sex…" autocomplete="off" />
+                <span class="search-hint">Searches current litter</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Nav overlay + full-screen centered panel (identical at every screen size) -->
+    <div class="nav-overlay" id="navOverlay"></div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="puppies.html">Puppies</a></li>
+        <li><a href="parents.html">Parents</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-apply-row"><a href="puppy-application.html">Apply For A Puppy</a></li>
+    </ul>
+    <section class="page-banner">
+        <div class="container">
+            <p class="section-label">The Dollhaus Royale Family</p>
+            <h1>Gallery</h1>
+            <div class="gold-divider centered"></div>
+            <p>A collection of the little Royals who have found their forever homes. Click any photo for a closer look.</p>
+        </div>
+    </section>
+
+    <section class="page-content">
+        <div class="container">
+            <div class="full-gallery-grid" id="galleryGrid">
+                <button type="button" class="gallery-card"
+                    data-name="Baroness Willow"
+                    data-breed="Shih Tzu · Cream"
+                    data-preview="Now 18 months old"
+                    data-photo="https://images.unsplash.com/photo-1610385874395-e75e493098b7?w=1200&h=1200&fit=crop"
+                    data-age="18 months"
+                    data-birthday="February 14, 2025"
+                    data-parents="Sir Alistair × Lady Seraphina"
+                    data-adopted-by="The Whitfield Family"
+                    data-location="London, United Kingdom"
+                    data-adopted-date="April 30, 2025">
+                    <div class="gallery-card-photo">
+                        <img src="https://images.unsplash.com/photo-1610385874395-e75e493098b7?w=500&h=500&fit=crop" alt="Baroness Willow" loading="lazy" />
+                        <span class="gallery-card-viewmore">View Profile</span>
+                    </div>
+                    <div class="gallery-card-info">
+                        <h3>Baroness Willow</h3>
+                        <div class="meta">Shih Tzu · Cream · 18 mo</div>
+                    </div>
+                </button>
+
+                <button type="button" class="gallery-card"
+                    data-name="Sir Tobias"
+                    data-breed="Shih Tzu · Black &amp; White"
+                    data-preview="Now 2 years old"
+                    data-photo="https://images.unsplash.com/photo-1581582962839-0ff77bb4e4db?w=1200&h=1200&fit=crop"
+                    data-age="2 years"
+                    data-birthday="August 3, 2024"
+                    data-parents="Sir Alistair × Lady Mireille"
+                    data-adopted-by="The Navarro Family"
+                    data-location="San Diego, California, USA"
+                    data-adopted-date="October 19, 2024">
+                    <div class="gallery-card-photo">
+                        <img src="https://images.unsplash.com/photo-1581582962839-0ff77bb4e4db?w=500&h=500&fit=crop" alt="Sir Tobias" loading="lazy" />
+                        <span class="gallery-card-viewmore">View Profile</span>
+                    </div>
+                    <div class="gallery-card-info">
+                        <h3>Sir Tobias</h3>
+                        <div class="meta">Shih Tzu · Black &amp; White · 2 yrs</div>
+                    </div>
+                </button>
+
+                <button type="button" class="gallery-card"
+                    data-name="Lady Marigold"
+                    data-breed="Shih Tzu · Chocolate"
+                    data-preview="Now 14 months old"
+                    data-photo="https://images.unsplash.com/photo-1604579493738-c12b9c0ef36a?w=1200&h=1200&fit=crop"
+                    data-age="14 months"
+                    data-birthday="June 21, 2025"
+                    data-parents="Sir Alistair × Lady Mireille"
+                    data-adopted-by="The Osei Family"
+                    data-location="Toronto, Canada"
+                    data-adopted-date="August 29, 2025">
+                    <div class="gallery-card-photo">
+                        <img src="https://images.unsplash.com/photo-1604579493738-c12b9c0ef36a?w=500&h=500&fit=crop" alt="Lady Marigold" loading="lazy" />
+                        <span class="gallery-card-viewmore">View Profile</span>
+                    </div>
+                    <div class="gallery-card-info">
+                        <h3>Lady Marigold</h3>
+                        <div class="meta">Shih Tzu · Chocolate · 14 mo</div>
+                    </div>
+                </button>
+
+                <button type="button" class="gallery-card"
+                    data-name="Duke Sterling"
+                    data-breed="Shih Tzu · Tricolor"
+                    data-preview="Now 10 months old"
+                    data-photo="https://images.unsplash.com/photo-1586977583169-944dfefcf61b?w=1200&h=1200&fit=crop"
+                    data-age="10 months"
+                    data-birthday="October 2, 2025"
+                    data-parents="Sir Alistair × Lady Seraphina"
+                    data-adopted-by="The Callahan Family"
+                    data-location="Austin, Texas, USA"
+                    data-adopted-date="December 14, 2025">
+                    <div class="gallery-card-photo">
+                        <img src="https://images.unsplash.com/photo-1586977583169-944dfefcf61b?w=500&h=500&fit=crop" alt="Duke Sterling" loading="lazy" />
+                        <span class="gallery-card-viewmore">View Profile</span>
+                    </div>
+                    <div class="gallery-card-info">
+                        <h3>Duke Sterling</h3>
+                        <div class="meta">Shih Tzu · Tricolor · 10 mo</div>
+                    </div>
+                </button>
+
+                <button type="button" class="gallery-card"
+                    data-name="Countess Hazel"
+                    data-breed="Shih Tzu · Gold &amp; White"
+                    data-preview="Now 2.5 years old"
+                    data-photo="https://images.unsplash.com/photo-1519677194310-7b6f32e6446f?w=1200&h=1200&fit=crop"
+                    data-age="2.5 years"
+                    data-birthday="January 9, 2024"
+                    data-parents="Sir Alistair × Lady Seraphina"
+                    data-adopted-by="The Marchetti Family"
+                    data-location="Rome, Italy"
+                    data-adopted-date="March 22, 2024">
+                    <div class="gallery-card-photo">
+                        <img src="https://images.unsplash.com/photo-1519677194310-7b6f32e6446f?w=500&h=500&fit=crop" alt="Countess Hazel" loading="lazy" />
+                        <span class="gallery-card-viewmore">View Profile</span>
+                    </div>
+                    <div class="gallery-card-info">
+                        <h3>Countess Hazel</h3>
+                        <div class="meta">Shih Tzu · Gold &amp; White · 2.5 yrs</div>
+                    </div>
+                </button>
+
+                <button type="button" class="gallery-card"
+                    data-name="Baron Winston"
+                    data-breed="Shih Tzu · Cream"
+                    data-preview="Now 7 months old"
+                    data-photo="https://images.unsplash.com/photo-1589441161120-8781d5644435?w=1200&h=1200&fit=crop"
+                    data-age="7 months"
+                    data-birthday="January 5, 2026"
+                    data-parents="Sir Alistair × Lady Mireille"
+                    data-adopted-by="The Delgado Family"
+                    data-location="Quezon City, Philippines"
+                    data-adopted-date="March 15, 2026">
+                    <div class="gallery-card-photo">
+                        <img src="https://images.unsplash.com/photo-1589441161120-8781d5644435?w=500&h=500&fit=crop" alt="Baron Winston" loading="lazy" />
+                        <span class="gallery-card-viewmore">View Profile</span>
+                    </div>
+                    <div class="gallery-card-info">
+                        <h3>Baron Winston</h3>
+                        <div class="meta">Shih Tzu · Cream · 7 mo</div>
+                    </div>
+                </button>
+
+                <button type="button" class="gallery-card"
+                    data-name="Princess Coco"
+                    data-breed="Shih Tzu · Chocolate"
+                    data-preview="Now 20 months old"
+                    data-photo="https://images.unsplash.com/photo-1608787449797-1b42f22f0ee9?w=1200&h=1200&fit=crop"
+                    data-age="20 months"
+                    data-birthday="December 11, 2024"
+                    data-parents="Sir Alistair × Lady Mireille"
+                    data-adopted-by="The Fontaine Family"
+                    data-location="Vancouver, Canada"
+                    data-adopted-date="February 8, 2025">
+                    <div class="gallery-card-photo">
+                        <img src="https://images.unsplash.com/photo-1608787449797-1b42f22f0ee9?w=500&h=500&fit=crop" alt="Princess Coco" loading="lazy" />
+                        <span class="gallery-card-viewmore">View Profile</span>
+                    </div>
+                    <div class="gallery-card-info">
+                        <h3>Princess Coco</h3>
+                        <div class="meta">Shih Tzu · Chocolate · 20 mo</div>
+                    </div>
+                </button>
+
+                <button type="button" class="gallery-card"
+                    data-name="Lord Fitzgerald"
+                    data-breed="Shih Tzu · Black &amp; White"
+                    data-preview="Now 3 years old"
+                    data-photo="https://images.unsplash.com/photo-1610385874395-e75e493098b7?w=1200&h=1200&fit=crop&sat=-20"
+                    data-age="3 years"
+                    data-birthday="May 30, 2023"
+                    data-parents="Sir Alistair × Lady Seraphina"
+                    data-adopted-by="The Hargrove Family"
+                    data-location="Sydney, Australia"
+                    data-adopted-date="August 4, 2023">
+                    <div class="gallery-card-photo">
+                        <img src="https://images.unsplash.com/photo-1610385874395-e75e493098b7?w=500&h=500&fit=crop&sat=-20" alt="Lord Fitzgerald" loading="lazy" />
+                        <span class="gallery-card-viewmore">View Profile</span>
+                    </div>
+                    <div class="gallery-card-info">
+                        <h3>Lord Fitzgerald</h3>
+                        <div class="meta">Shih Tzu · Black &amp; White · 3 yrs</div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dog Profile Modal -->
+    <div class="dog-modal" id="dogModal" role="dialog" aria-modal="true" aria-labelledby="modalName">
+        <div class="dog-modal-overlay" id="dogModalOverlay"></div>
+        <div class="dog-modal-panel">
+            <button class="dog-modal-close" id="dogModalClose" aria-label="Close">&times;</button>
+            <div class="dog-modal-photo">
+                <img id="modalPhoto" src="" alt="" />
+            </div>
+            <div class="dog-modal-body">
+                <p class="role-tag">Dollhaus Royale Alumni</p>
+                <h3 id="modalName"></h3>
+                <div class="status-line" id="modalPreview"></div>
+                <ul class="dog-modal-specs">
+                    <li><span>Breed</span><span id="modalBreed"></span></li>
+                    <li><span>Age</span><span id="modalAge"></span></li>
+                    <li><span>Birthday</span><span id="modalBirthday"></span></li>
+                    <li><span>Parents</span><span id="modalParents"></span></li>
+                    <li><span>Adopted By</span><span id="modalAdoptedBy"></span></li>
+                    <li><span>Adopted On</span><span id="modalAdoptedDate"></span></li>
+                    <li><span>Now Lives In</span><span id="modalLocation"></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <img src="dr-logo.png" class="dr-crest footer-crest" alt="Dollhaus Royale crest" />
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="puppies.html">Puppies</a>
+                <a href="parents.html">Parents</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="services.html">Services</a>
+                <a href="puppy-application.html">Apply</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="gold-divider centered"></div>
+            <p>&copy; 2026 <strong style="color:#2A1810;font-weight:400;">Dollhaus Royale</strong> · Raised with intention. Loved as family.</p>
+            <p style="margin-top:0.5rem;font-size:0.65rem;color:#D9CBB8;">Premium Shih Tzu · Health-Tested · Family-Raised</p>
+        </div>
+    </footer>
+    <script>
+        // 1. PAGE LOAD FADE-IN
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('loaded');
+        });
+
+        // 2. BURGER MENU (same full-screen centered panel at every screen size)
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        const navOverlay = document.getElementById('navOverlay');
+
+        function openMenu() {
+            menuToggle.classList.add('active');
+            navLinks.classList.add('open');
+            navOverlay.classList.add('open');
+        }
+        function closeMenu() {
+            menuToggle.classList.remove('active');
+            navLinks.classList.remove('open');
+            navOverlay.classList.remove('open');
+        }
+        menuToggle.addEventListener('click', function() {
+            if (navLinks.classList.contains('open')) { closeMenu(); } else { openMenu(); }
+        });
+        navOverlay.addEventListener('click', closeMenu);
+        navLinks.addEventListener('click', function(event) {
+            if (event.target === navLinks) { closeMenu(); }
+        });
+
+        // 3. SEARCH BAR (expands + live-filters any .puppy-card present on the page)
+        const searchToggle = document.getElementById('searchToggle');
+        const searchPanel = document.getElementById('searchPanel');
+        const puppySearch = document.getElementById('puppySearch');
+        const puppyCards = Array.from(document.querySelectorAll('.puppy-card'));
+
+        searchToggle.addEventListener('click', function() {
+            const isOpen = searchPanel.classList.toggle('open');
+            if (isOpen) {
+                setTimeout(function() { puppySearch.focus(); }, 300);
+            } else {
+                puppySearch.value = '';
+                filterPuppies('');
+            }
+        });
+
+        function filterPuppies(query) {
+            const q = query.trim().toLowerCase();
+            puppyCards.forEach(function(card) {
+                const text = card.textContent.toLowerCase();
+                card.style.display = (q === '' || text.includes(q)) ? '' : 'none';
+            });
+        }
+
+        puppySearch.addEventListener('input', function() {
+            filterPuppies(this.value);
+        });
+
+        
+        // DOG PROFILE MODAL
+        var dogModal = document.getElementById('dogModal');
+        var dogModalOverlay = document.getElementById('dogModalOverlay');
+        var dogModalClose = document.getElementById('dogModalClose');
+        var modalFields = {
+            photo: document.getElementById('modalPhoto'),
+            name: document.getElementById('modalName'),
+            preview: document.getElementById('modalPreview'),
+            breed: document.getElementById('modalBreed'),
+            age: document.getElementById('modalAge'),
+            birthday: document.getElementById('modalBirthday'),
+            parents: document.getElementById('modalParents'),
+            adoptedBy: document.getElementById('modalAdoptedBy'),
+            adoptedDate: document.getElementById('modalAdoptedDate'),
+            location: document.getElementById('modalLocation')
+        };
+
+        function openDogModal(card) {
+            var d = card.dataset;
+            modalFields.photo.src = d.photo;
+            modalFields.photo.alt = d.name;
+            modalFields.name.textContent = d.name;
+            modalFields.preview.textContent = d.preview;
+            modalFields.breed.textContent = d.breed;
+            modalFields.age.textContent = d.age;
+            modalFields.birthday.textContent = d.birthday;
+            modalFields.parents.textContent = d.parents;
+            modalFields.adoptedBy.textContent = d.adoptedBy;
+            modalFields.adoptedDate.textContent = d.adoptedDate;
+            modalFields.location.textContent = d.location;
+            dogModal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDogModal() {
+            dogModal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        document.querySelectorAll('#galleryGrid .gallery-card').forEach(function(card) {
+            card.addEventListener('click', function() { openDogModal(card); });
+        });
+        dogModalClose.addEventListener('click', closeDogModal);
+        dogModalOverlay.addEventListener('click', closeDogModal);
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { closeDogModal(); } });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home · Dollhaus Royale</title>
+    <meta name="description" content="Dollhaus Royale — premium, health-tested Shih Tzu raised with intention and love." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- ========================================
+    HEADER
+    ======================================== -->
+    <header>
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">
+                <img src="dr-logo.png" class="dr-crest" alt="Dollhaus Royale crest" />
+                Dollhaus <span>Royale</span>
+            </a>
+
+            <div class="nav-actions">
+                <button class="icon-btn" id="searchToggle" aria-label="Search">
+                    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
+                </button>
+                <!-- "Apply For A Puppy" intentionally left out of the header
+                     here only — the hero below now carries that call to
+                     action, so keeping it in both places read as repetitive -->
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Search panel -->
+        <div class="search-panel" id="searchPanel">
+            <div class="container search-panel-inner">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
+                <input type="text" id="puppySearch" placeholder="Search puppies by name, color, or sex…" autocomplete="off" />
+                <span class="search-hint">Searches current litter</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Nav overlay + full-screen centered panel (identical at every screen size) -->
+    <div class="nav-overlay" id="navOverlay"></div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="puppies.html">Puppies</a></li>
+        <li><a href="parents.html">Parents</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-apply-row"><a href="puppy-application.html">Apply For A Puppy</a></li>
+    </ul>
+    <!-- ========================================
+    HERO (red_dog.png full-bleed background)
+    ======================================== -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <img src="dr-logo.png" class="dr-crest" alt="Dollhaus Royale crest" />
+                <p class="section-label">Est. 2017 · Premium Shih Tzu</p>
+                <h1>Where Exceptional <em>Shih Tzu</em><br />Begin</h1>
+                <div class="tagline">Raised with intention. Loved as family.</div>
+                <div class="gold-divider"></div>
+                <p>Every puppy we raise represents everything we have learned along the way. Beautiful puppies are only the beginning—what matters most is raising them with knowledge, intention, and love.</p>
+                <div class="hero-buttons">
+                    <a href="puppy-application.html" id="heroApplyBtn" class="btn-primary btn-hero-cta">Apply For A Puppy</a>
+                    <a href="puppies.html" class="btn-secondary">View Our Puppies</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+    MOMENTS SLIDESHOW — one big crossfading slideshow (idea taken from
+    moonshineashihtzu.com's grid, rebuilt as a single large carousel with
+    arrow + dot navigation). Slides alternate still photo / "in motion":
+    to use a real GIF or video on a motion slide, just replace that
+    slide's <img> with <video autoplay muted loop playsinline> — the
+    crossfade, arrows, dots and autoplay timer all keep working as-is.
+    Auto-advances every 13s (within the 10–15s window requested).
+    ======================================== -->
+    <section class="hero-slideshow" id="heroSlideshow" aria-label="Recent Dollhaus Royale moments" aria-roledescription="carousel">
+        <div class="slide slide-pic active">
+            <img src="https://images.unsplash.com/photo-1610385874395-e75e493098b7?w=1400&h=900&fit=crop" alt="A Dollhaus Royale Shih Tzu dressed for the holidays" loading="eager" decoding="async" />
+        </div>
+        <div class="slide slide-motion">
+            <span class="slide-motion-badge"><span class="dot"></span> In Motion</span>
+            <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3enV3NmltMGs5OGNjN2xucHhxNjNseDg3dTF0czV5NDRiYmdva2RnYiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/hLAyfROn4F83ZhkWJ5/giphy.gif?w=1400&h=900&fit=crop" alt="Dollhaus Royale puppy moment" loading="lazy" decoding="async" />
+        </div>
+        <div class="slide slide-pic">
+            <img src="https://images.unsplash.com/photo-1581582962839-0ff77bb4e4db?w=1400&h=900&fit=crop" alt="Dollhaus Royale puppy moment" loading="lazy" decoding="async" />
+        </div>
+        <div class="slide slide-motion">
+            <span class="slide-motion-badge"><span class="dot"></span> In Motion</span>
+            <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZHM2aWZ2eHFtOHI5cWpsbjZ6MXMxN3M1ZGNmdTlvMnQ2YTlrbWQ0NiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/N66FiQfKj53UwNOFWX/giphy.gif?w=1400&h=900&fit=crop" alt="Dollhaus Royale puppy moment" loading="lazy" decoding="async" />
+        </div>
+
+        <button class="slide-arrow prev" id="slidePrev" aria-label="Previous slide">
+            <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" /></svg>
+        </button>
+        <button class="slide-arrow next" id="slideNext" aria-label="Next slide">
+            <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" /></svg>
+        </button>
+        <div class="slide-dots" id="slideDots"></div>
+    </section>
+
+        <div class="section-seam">
+        <div class="pedigree-divider">
+            <span class="line"></span>
+            <img src="dr-logo.png" class="dr-crest" alt="Dollhaus Royale crest" />
+            <span class="line right"></span>
+        </div>
+    </div>
+
+
+
+    <!-- ========================================
+    ABOUT TEASER
+    ======================================== -->
+    <section class="story-section">
+        <div class="story-bleed-grid">
+            <div class="story-image">
+                <img src="https://images.unsplash.com/photo-1519677194310-7b6f32e6446f?w=800&h=600&fit=crop" alt="Dollhaus Royale kennel" loading="lazy" decoding="async" />
+            </div>
+            <div class="story-text-wrap">
+                <div class="story-text">
+                    <p class="section-label">Our Story</p>
+                    <h2>Dollhaus Royale</h2>
+                    <div class="story-sub">A simple love for Shih Tzu</div>
+                    <div class="gold-divider"></div>
+                    <p><span class="drop-cap">D</span>ollhaus Royale began with a simple love for Shih Tzu. Our journey started in <strong>2017 with Luna</strong>, and years later led us to <strong>Ottie</strong>, <strong>Cheesecake</strong>, and eventually a mentor who opened the door to a deeper understanding of Shih Tzu genetics and bloodlines.</p>
+                    <p>That journey became Dollhaus Royale — a home where every puppy represents everything we have learned along the way.</p>
+                    <a href="about.html" class="btn-viewmore">Read Our Full Story</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <div class="section-seam on-tint">
+        <div class="pedigree-divider">
+            <span class="line"></span>
+            <img src="dr-logo.png" class="dr-crest" alt="Dollhaus Royale crest" />
+            <span class="line right"></span>
+        </div>
+    </div>
+
+
+
+    <!-- ========================================
+    VALUES
+    ======================================== -->
+    <section class="values-section" id="values">
+        <div class="container values-grid">
+            <div class="values-content">
+                <p class="section-label">Our Standards</p>
+                <h2>Raised the<br />right way</h2>
+                <div class="gold-divider"></div>
+                <p><strong>Every litter is planned, not accidental —</strong> chosen for health, temperament, and bloodline before a single puppy is born.</p>
+                <ul class="values-list">
+                    <li>Health-tested champion Shih Tzu bloodlines</li>
+                    <li>Raised in our home, not a kennel</li>
+                    <li>Every puppy socialized with love</li>
+                    <li>Ongoing commitment to breed education</li>
+                    <li>Health records and lifelong support for every family</li>
+                </ul>
+            </div>
+            <div class="values-image">
+                <img src="https://images.unsplash.com/photo-1608787449797-1b42f22f0ee9?w=800&h=600&fit=crop" alt="Shih Tzu puppy" loading="lazy" decoding="async" />
+            </div>
+        </div>
+    </section>
+
+        <div class="section-seam">
+        <div class="pedigree-divider">
+            <span class="line"></span>
+            <img src="dr-logo.png" class="dr-crest" alt="Dollhaus Royale crest" />
+            <span class="line right"></span>
+        </div>
+    </div>
+
+
+
+    <!-- ========================================
+    PUPPIES PREVIEW
+    ======================================== -->
+    <section class="puppies-section" id="puppies">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <p class="section-label">Available Now</p>
+                    <h2>Our current litter</h2>
+                </div>
+                <a href="puppies.html">View all →</a>
+            </div>
+            <div class="gold-divider"></div>
+
+            <div class="puppy-grid">
+                <div class="puppy-card">
+                    <img src="https://images.unsplash.com/photo-1581582962839-0ff77bb4e4db?w=600&h=400&fit=crop" alt="Shih Tzu puppy" loading="lazy" decoding="async" />
+                    <h3>Prince Caspian</h3>
+                    <div class="meta">Male · Tricolor · Born Jan 2026</div>
+                    <div class="price">$4,200</div>
+                </div>
+                <div class="puppy-card">
+                    <img src="https://images.unsplash.com/photo-1604579493738-c12b9c0ef36a?w=600&h=400&fit=crop" alt="Shih Tzu puppy" loading="lazy" decoding="async" />
+                    <h3>Duchess Pearl</h3>
+                    <div class="meta">Female · Cream · Born Jan 2026</div>
+                    <div class="price">$4,500</div>
+                </div>
+                <div class="puppy-card">
+                    <img src="https://images.unsplash.com/photo-1589441161120-8781d5644435?w=600&h=400&fit=crop" alt="Shih Tzu puppy" loading="lazy" decoding="async" />
+                    <h3>Lord Beaumont</h3>
+                    <div class="meta">Male · Black &amp; White · Born Dec 2025</div>
+                    <div class="price">$3,800</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <div class="section-seam on-tint">
+        <div class="pedigree-divider">
+            <span class="line"></span>
+            <img src="dr-logo.png" class="dr-crest" alt="Dollhaus Royale crest" />
+            <span class="line right"></span>
+        </div>
+    </div>
+
+
+
+    <!-- ========================================
+    CONTACT TEASER
+    ======================================== -->
+    <section class="contact-section" id="contact">
+        <div class="container contact-grid">
+            <div class="contact-info">
+                <p class="section-label">Get In Touch</p>
+                <h2>Have a question<br />about our puppies?</h2>
+                <div class="gold-divider"></div>
+                <div class="contact-seal">
+                    <img src="dr-logo.png" class="seal-mark" alt="Dollhaus Royale crest" />
+                    <div class="seal-text">We'd love to hear from you — every inquiry is read personally by our family.</div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="btn-primary">Contact Us</a>
+                    <a href="puppy-application.html" class="btn-secondary">Apply For A Puppy</a>
+                </div>
+            </div>
+            <div class="contact-image">
+                <img src="https://images.unsplash.com/photo-1586977583169-944dfefcf61b?w=800&h=600&fit=crop" alt="Shih Tzu puppy" loading="lazy" decoding="async" />
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+    CLOSING TAGLINE
+    ======================================== -->
+    <section class="tagline-band">
+        <div class="container">
+            <p>Raised with knowledge, intention, and love —</p>
+            <h2>one Royal litter at a time.</h2>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <img src="dr-logo.png" class="dr-crest footer-crest" alt="Dollhaus Royale crest" />
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="puppies.html">Puppies</a>
+                <a href="parents.html">Parents</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="services.html">Services</a>
+                <a href="puppy-application.html">Apply</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="gold-divider centered"></div>
+            <p>&copy; 2026 <strong style="color:#2A1810;font-weight:400;">Dollhaus Royale</strong> · Raised with intention. Loved as family.</p>
+            <p style="margin-top:0.5rem;font-size:0.65rem;color:#D9CBB8;">Premium Shih Tzu · Health-Tested · Family-Raised</p>
+        </div>
+    </footer>
+    <script>
+        // 1. PAGE LOAD FADE-IN
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('loaded');
+        });
+
+        // 2. BURGER MENU (same full-screen centered panel at every screen size)
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        const navOverlay = document.getElementById('navOverlay');
+
+        function openMenu() {
+            menuToggle.classList.add('active');
+            navLinks.classList.add('open');
+            navOverlay.classList.add('open');
+        }
+        function closeMenu() {
+            menuToggle.classList.remove('active');
+            navLinks.classList.remove('open');
+            navOverlay.classList.remove('open');
+        }
+        menuToggle.addEventListener('click', function() {
+            if (navLinks.classList.contains('open')) { closeMenu(); } else { openMenu(); }
+        });
+        navOverlay.addEventListener('click', closeMenu);
+        navLinks.addEventListener('click', function(event) {
+            if (event.target === navLinks) { closeMenu(); }
+        });
+
+        // 3. SEARCH BAR (expands + live-filters any .puppy-card present on the page)
+        const searchToggle = document.getElementById('searchToggle');
+        const searchPanel = document.getElementById('searchPanel');
+        const puppySearch = document.getElementById('puppySearch');
+        const puppyCards = Array.from(document.querySelectorAll('.puppy-card'));
+
+        searchToggle.addEventListener('click', function() {
+            const isOpen = searchPanel.classList.toggle('open');
+            if (isOpen) {
+                setTimeout(function() { puppySearch.focus(); }, 300);
+            } else {
+                puppySearch.value = '';
+                filterPuppies('');
+            }
+        });
+
+        function filterPuppies(query) {
+            const q = query.trim().toLowerCase();
+            puppyCards.forEach(function(card) {
+                const text = card.textContent.toLowerCase();
+                card.style.display = (q === '' || text.includes(q)) ? '' : 'none';
+            });
+        }
+
+        puppySearch.addEventListener('input', function() {
+            filterPuppies(this.value);
+        });
+
+        // 4. MOMENTS SLIDESHOW — one big crossfading carousel with arrow
+        // buttons and dot indicators, auto-advancing every 13s. Clicking
+        // an arrow or a dot jumps immediately and restarts the timer so
+        // manual browsing never fights with the autoplay.
+        (function() {
+            var wrap = document.getElementById('heroSlideshow');
+            if (!wrap) { return; }
+
+            var slides = Array.from(wrap.querySelectorAll('.slide'));
+            var dotsWrap = document.getElementById('slideDots');
+            var prevBtn = document.getElementById('slidePrev');
+            var nextBtn = document.getElementById('slideNext');
+            if (!slides.length) { return; }
+
+            var AUTO_MS = 13000; // within the requested 10-15s window
+            var current = slides.findIndex(function(s) { return s.classList.contains('active'); });
+            if (current < 0) { current = 0; }
+            var timer = null;
+
+            slides.forEach(function(_, i) {
+                var dot = document.createElement('button');
+                dot.className = 'slide-dot' + (i === current ? ' active' : '');
+                dot.type = 'button';
+                dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+                dot.addEventListener('click', function() { goTo(i); restart(); });
+                dotsWrap.appendChild(dot);
+            });
+            var dots = Array.from(dotsWrap.children);
+
+            function goTo(i) {
+                slides[current].classList.remove('active');
+                dots[current].classList.remove('active');
+                current = (i + slides.length) % slides.length;
+                slides[current].classList.add('active');
+                dots[current].classList.add('active');
+            }
+            function next() { goTo(current + 1); }
+            function prev() { goTo(current - 1); }
+            function restart() {
+                if (timer) { clearInterval(timer); }
+                timer = setInterval(next, AUTO_MS);
+            }
+
+            nextBtn.addEventListener('click', function() { next(); restart(); });
+            prevBtn.addEventListener('click', function() { prev(); restart(); });
+
+            restart();
+        })();
+
+        // 5. IDLE GLOW ON THE HERO "APPLY FOR A PUPPY" BUTTON — after 60s
+        // with no mouse, scroll, touch, or key activity, the button starts
+        // a soft glow to catch the eye; any interaction clears it and
+        // restarts the 60s countdown.
+        (function() {
+            var applyBtn = document.getElementById('heroApplyBtn');
+            if (!applyBtn) { return; }
+
+            var IDLE_MS = 60000;
+            var idleTimer = null;
+
+            function armIdle() {
+                idleTimer = setTimeout(function() {
+                    applyBtn.classList.add('idle-glow');
+                }, IDLE_MS);
+            }
+            function resetIdle() {
+                applyBtn.classList.remove('idle-glow');
+                if (idleTimer) { clearTimeout(idleTimer); }
+                armIdle();
+            }
+
+            ['mousemove', 'mousedown', 'keydown', 'touchstart', 'scroll'].forEach(function(evt) {
+                window.addEventListener(evt, resetIdle, { passive: true });
+            });
+
+            armIdle();
+        })();
+    </script>
+</body>
+</html>
