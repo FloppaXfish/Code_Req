@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin Login · Dollhaus Royale</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="portal.css" />
+</head>
+<body>
+
+<div class="login-wrap">
+
+  <!-- LEFT: brand panel -->
+  <div class="login-panel">
+    <div class="login-logo">
+      <span class="heart">♡</span>
+      DOLLHAUS <em>ROYALE</em>
+    </div>
+
+    <div class="login-hero">
+      <div class="eyebrow">Admin &amp; Staff Portal</div>
+      <h1>Every litter, every family,<br>every detail — in one ledger.</h1>
+      <p>Sign in to manage reservations, health records, and messages across the kennel.</p>
+    </div>
+
+    <div class="login-quote">
+      <p>"Keeping the record straight is how we keep our promise to every family — start to finish."</p>
+      <div class="who">
+        <span class="avatar">M</span>
+        Marisol, Kennel Manager
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: sign-in form -->
+  <div class="login-form-side">
+    <div class="login-form-card">
+      <div class="eyebrow">🔒 Restricted Access</div>
+      <h2>Admin sign in</h2>
+      <p>Staff and breeder credentials only. Household members should use the family portal.</p>
+
+      <div class="login-error" id="loginError">
+        Incorrect email or password. Try the demo credentials below.
+      </div>
+
+      <form id="loginForm">
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="you@dollhausroyale.com" autocomplete="username" required />
+        </div>
+
+        <div class="field field-password">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="••••••••" autocomplete="current-password" required />
+          <button type="button" class="toggle-pw" id="togglePw" aria-label="Show password">👁</button>
+        </div>
+
+        <div class="field-row">
+          <label><input type="checkbox" id="keepSignedIn" /> Keep me signed in</label>
+          <a href="#" onclick="alert('This is a demo — password reset is not wired up yet.'); return false;">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-solid">Sign in to Admin</button>
+      </form>
+
+      <div class="help-divider">Need help?</div>
+      <p class="help-text">Not staff? Go to the <a href="#">family portal</a>, or contact the kennel manager for access.</p>
+
+      <!-- Embedded test account so this can be demoed / QA'd without a real backend yet -->
+      <div class="demo-box">
+        <strong>Demo login (for testing):</strong><br>
+        Email: <code>admin@dollhausroyale.com</code><br>
+        Password: <code>DollhausAdmin2026</code>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // ============================================================
+  // DEMO AUTH — embedded test account only.
+  // Replace this whole block with a real API call when the
+  // backend is ready (e.g. fetch('/api/login', { ... })).
+  // ============================================================
+  const TEST_ACCOUNT = {
+    email: 'admin@dollhausroyale.com',
+    password: 'DollhausAdmin2026'
+  };
+
+  const form = document.getElementById('loginForm');
+  const errorBox = document.getElementById('loginError');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const email = document.getElementById('email').value.trim().toLowerCase();
+    const password = document.getElementById('password').value;
+
+    if (email === TEST_ACCOUNT.email && password === TEST_ACCOUNT.password) {
+      // Mark as signed in for this browser tab/session.
+      // A real backend would set a proper auth cookie/token instead.
+      sessionStorage.setItem('dr_admin_signed_in', 'true');
+      sessionStorage.setItem('dr_admin_name', 'Renata');
+      window.location.href = 'dashboard.html';
+    } else {
+      errorBox.classList.add('show');
+    }
+  });
+
+  // Show/hide password
+  const pwInput = document.getElementById('password');
+  const toggleBtn = document.getElementById('togglePw');
+  toggleBtn.addEventListener('click', function () {
+    const isHidden = pwInput.type === 'password';
+    pwInput.type = isHidden ? 'text' : 'password';
+    toggleBtn.textContent = isHidden ? '🙈' : '👁';
+  });
+</script>
+
+</body>
+</html>
