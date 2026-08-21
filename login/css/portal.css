@@ -1,8 +1,4 @@
-/* ============================================================
-   DOLLHAUS ROYALE · PORTAL STYLES
-   Shared by login.html and dashboard.html
-   Separate mini-site — NOT part of the main Shih Tzu website.
-   ============================================================ */
+
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -89,9 +85,7 @@ a { color: inherit; }
 }
 .btn-outline:hover { background: var(--cream-soft); }
 
-/* ============================================================
-   LOGIN PAGE
-   ============================================================ */
+
 
 .login-wrap {
   display: grid;
@@ -295,9 +289,7 @@ a { color: inherit; }
   font-size: 0.78rem;
 }
 
-/* ============================================================
-   DASHBOARD PAGE
-   ============================================================ */
+
 
 .dash-wrap { display: flex; min-height: 100vh; }
 
