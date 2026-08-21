@@ -116,9 +116,7 @@ every detail — in one ledger.</p>
         <button type="submit" class="btn btn-solid">Sign in to Admin</button>
       </form>
 
-      <div class="help-divider">Need help?</div>
-      <p class="help-text">Not staff? Go to the <a href="#">family portal</a>, or contact the kennel manager for access.</p>
-
+      
     
     </div>
   </div>
