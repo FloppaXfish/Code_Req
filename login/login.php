@@ -60,7 +60,7 @@ if (empty($rememberEmail) && isset($_COOKIE['dr_admin_email'])) {
     </div>
 
     <div class="login-hero">
-      <div class="eyebrow">Admin &amp; Staff Portal</div>
+   
       <h1>Every litter, every family,<br>every detail — in one ledger.</h1>
       <p>Sign in to manage reservations, health records, and messages across the kennel.</p>
     </div>
@@ -77,11 +77,11 @@ if (empty($rememberEmail) && isset($_COOKIE['dr_admin_email'])) {
   <div class="login-form-side">
     <div class="login-form-card">
       <div class="eyebrow">
-        <svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3" /></svg>
-        Restricted Access
+       
       </div>
-      <h2>Admin sign in</h2>
-      <p>Staff and breeder credentials only. Household members should use the family portal.</p>
+      <h2>Sign in</h2>
+        <p>Every litter, every family,
+every detail — in one ledger.</p>
 
       <?php if ($loginError): ?>
       <div class="login-error show" id="loginError">
@@ -110,7 +110,7 @@ if (empty($rememberEmail) && isset($_COOKIE['dr_admin_email'])) {
 
         <div class="field-row">
           <label><input type="checkbox" name="keep_signed_in" id="keepSignedIn" <?php echo isset($_COOKIE['dr_admin_email']) ? 'checked' : ''; ?> /> Keep me signed in</label>
-          <a href="#" onclick="alert('This is a demo — password reset is not wired up yet.'); return false;">Forgot password?</a>
+        
         </div>
 
         <button type="submit" class="btn btn-solid">Sign in to Admin</button>
@@ -119,11 +119,7 @@ if (empty($rememberEmail) && isset($_COOKIE['dr_admin_email'])) {
       <div class="help-divider">Need help?</div>
       <p class="help-text">Not staff? Go to the <a href="#">family portal</a>, or contact the kennel manager for access.</p>
 
-      <div class="demo-box">
-        <strong>Demo login (for testing):</strong><br>
-        Email: <code>admin@dollhausroyale.com</code><br>
-        Password: <code>DollhausAdmin2026</code>
-      </div>
+    
     </div>
   </div>
 
