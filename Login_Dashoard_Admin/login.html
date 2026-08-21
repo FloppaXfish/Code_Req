@@ -15,7 +15,7 @@
   <!-- LEFT: brand panel -->
   <div class="login-panel">
     <div class="login-logo">
-      <span class="heart">♡</span>
+      <img src="dr-logo.png" class="dr-crest" alt="Dollhaus Royale crest" />
       DOLLHAUS <em>ROYALE</em>
     </div>
 
@@ -37,7 +37,10 @@
   <!-- RIGHT: sign-in form -->
   <div class="login-form-side">
     <div class="login-form-card">
-      <div class="eyebrow">🔒 Restricted Access</div>
+      <div class="eyebrow">
+        <svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3" /></svg>
+        Restricted Access
+      </div>
       <h2>Admin sign in</h2>
       <p>Staff and breeder credentials only. Household members should use the family portal.</p>
 
@@ -54,7 +57,10 @@
         <div class="field field-password">
           <label for="password">Password</label>
           <input type="password" id="password" placeholder="••••••••" autocomplete="current-password" required />
-          <button type="button" class="toggle-pw" id="togglePw" aria-label="Show password">👁</button>
+          <button type="button" class="toggle-pw" id="togglePw" aria-label="Show password">
+            <svg class="icon-eye" viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z" /><circle cx="12" cy="12" r="3" /></svg>
+            <svg class="icon-eye-off" viewBox="0 0 24 24" style="display:none;"><path d="M17.9 17.9A10.6 10.6 0 0 1 12 19c-7 0-11-7-11-7a19.6 19.6 0 0 1 5-5.6M9.9 4.2A9.7 9.7 0 0 1 12 4c7 0 11 7 11 7a19.6 19.6 0 0 1-2.2 3.1M14.1 14.1a3 3 0 1 1-4.2-4.2" /><path d="M1 1l22 22" /></svg>
+          </button>
         </div>
 
         <div class="field-row">
@@ -113,10 +119,14 @@
   // Show/hide password
   const pwInput = document.getElementById('password');
   const toggleBtn = document.getElementById('togglePw');
+  const eyeIcon = toggleBtn.querySelector('.icon-eye');
+  const eyeOffIcon = toggleBtn.querySelector('.icon-eye-off');
   toggleBtn.addEventListener('click', function () {
     const isHidden = pwInput.type === 'password';
     pwInput.type = isHidden ? 'text' : 'password';
-    toggleBtn.textContent = isHidden ? '🙈' : '👁';
+    toggleBtn.setAttribute('aria-label', isHidden ? 'Hide password' : 'Show password');
+    eyeIcon.style.display = isHidden ? 'none' : 'block';
+    eyeOffIcon.style.display = isHidden ? 'block' : 'none';
   });
 </script>
 

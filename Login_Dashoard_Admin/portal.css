@@ -7,16 +7,17 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --maroon-dark: #3d0f1a;
-  --maroon: #5c1b2c;
-  --maroon-light: #6b2233;
-  --gold: #c9a961;
-  --cream: #f3e9d7;
-  --cream-soft: #f8f1e4;
-  --ink: #2a1a12;
-  --ink-soft: #6b5c4f;
-  --line: rgba(92, 27, 44, 0.12);
-  --green: #4c7a4c;
+  --maroon-dark: #2A1810;
+  --maroon: #950606;
+  --maroon-light: #b8241f;
+  --gold: #CC9A3D;
+  --cream: #FCF9F4;
+  --cream-soft: #f8f4ed;
+  --ink: #2A1810;
+  --ink-soft: #5C4A3E;
+  --ink-faint: #9C8A78;
+  --line: rgba(139, 26, 26, 0.12);
+  --green: #5b7c4f;
   font-family: 'Inter', -apple-system, sans-serif;
 }
 
@@ -39,6 +40,14 @@ a { color: inherit; }
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
+.eyebrow svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
 
 .btn {
   display: inline-flex;
@@ -54,6 +63,15 @@ a { color: inherit; }
   cursor: pointer;
   text-decoration: none;
   transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  flex-shrink: 0;
 }
 
 .btn:active { transform: scale(0.98); }
@@ -82,7 +100,11 @@ a { color: inherit; }
 }
 
 .login-panel {
-  background: radial-gradient(circle at 80% 100%, var(--maroon-light), var(--maroon-dark) 70%);
+  background-image:
+    linear-gradient(160deg, rgba(149, 6, 6, 0.82), rgba(42, 24, 16, 0.94) 65%),
+    url('https://images.unsplash.com/photo-1604579493738-c12b9c0ef36a?w=1200&h=1600&fit=crop');
+  background-size: cover;
+  background-position: center;
   color: #f3e2e2;
   padding: 56px 64px;
   display: flex;
@@ -99,7 +121,7 @@ a { color: inherit; }
   bottom: -80px;
   width: 320px;
   height: 320px;
-  border: 1px solid rgba(201, 169, 97, 0.18);
+  border: 1px solid rgba(204, 154, 61, 0.28);
   border-radius: 50%;
 }
 
@@ -111,12 +133,13 @@ a { color: inherit; }
   font-weight: 700;
   letter-spacing: 0.1em;
 }
-.login-logo .heart {
-  width: 34px; height: 34px;
-  border: 1px solid var(--gold);
+.login-logo .dr-crest {
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  color: var(--gold);
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
 }
 .login-logo em { color: var(--gold); font-style: italic; font-weight: 500; }
 
@@ -197,6 +220,16 @@ a { color: inherit; }
   background: none; border: none; cursor: pointer;
   color: var(--ink-soft);
   padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.toggle-pw svg {
+  width: 19px;
+  height: 19px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.7;
 }
 
 .field-row {
@@ -308,7 +341,15 @@ a { color: inherit; }
 }
 .nav-link:hover { background: rgba(255,255,255,0.06); }
 .nav-link.active { background: rgba(255,255,255,0.14); font-weight: 600; color: #fff; }
-.nav-link svg { flex-shrink: 0; opacity: 0.85; }
+.nav-link svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.7;
+  flex-shrink: 0;
+  opacity: 0.9;
+}
 
 .sidebar-spacer { flex: 1; }
 
@@ -434,6 +475,13 @@ a { color: inherit; }
   width: 34px; height: 34px; border-radius: 50%; background: var(--cream-soft);
   display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--maroon);
 }
+.activity-row .icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+}
 .activity-row p { font-size: 0.9rem; margin-bottom: 3px; }
 .activity-row small { font-size: 0.72rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.04em; }
 
@@ -443,6 +491,13 @@ a { color: inherit; }
   width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
   border: 1.5px solid var(--line);
+}
+.check-dot svg {
+  width: 12px;
+  height: 12px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2.4;
 }
 .check-row.done .check-dot { background: var(--green); border-color: var(--green); color: #fff; }
 .check-row.done span.label-text { text-decoration: line-through; color: var(--ink-soft); }
@@ -496,6 +551,14 @@ a { color: inherit; }
   .menu-btn {
     background: none; border: 1px solid rgba(255,255,255,0.3); border-radius: 8px;
     color: #fff; padding: 8px 10px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .menu-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.8;
   }
 
   .sidebar {

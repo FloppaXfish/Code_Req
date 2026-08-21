@@ -24,32 +24,55 @@
   <!-- Mobile top bar (shown only on small screens) -->
   <div class="mobile-topbar">
     <div class="login-logo">
-      <span class="heart">♡</span>
+      <img src="dr-logo.png" class="dr-crest" alt="Dollhaus Royale crest" />
       DOLLHAUS <em>ROYALE</em>
     </div>
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+      <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" /></svg>
+    </button>
   </div>
 
   <!-- Sidebar -->
   <aside class="sidebar" id="sidebar">
     <div class="login-logo">
-      <span class="heart">♡</span>
+      <img src="dr-logo.png" class="dr-crest" alt="Dollhaus Royale crest" />
       DOLLHAUS <em>ROYALE</em>
     </div>
 
     <div class="nav-group">
       <div class="nav-group-label">Household</div>
-      <a class="nav-link active" href="dashboard.html">🏠 Dashboard</a>
-      <a class="nav-link" href="#">🐾 My Puppy</a>
-      <a class="nav-link" href="#">💬 Messages</a>
-      <a class="nav-link" href="#">📅 Appointments</a>
-      <a class="nav-link" href="#">📄 Documents</a>
+      <a class="nav-link active" href="dashboard.html">
+        <svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8" /><path d="M5 10v10h14V10" /><path d="M9 20v-6h6v6" /></svg>
+        Dashboard
+      </a>
+      <a class="nav-link" href="#">
+        <svg viewBox="0 0 24 24"><circle cx="7" cy="8" r="1.8" /><circle cx="12" cy="6" r="1.8" /><circle cx="17" cy="8" r="1.8" /><path d="M8 14.2c-2.1 0-3.7 1.7-3.7 3.6S6 21.3 8 21.3c1.3 0 2.1-.5 4-.5s2.9.5 4 .5c2.1 0 3.7-1.7 3.7-3.6s-1.6-3.6-3.7-3.6c-1.5 0-2.3.9-4 .9s-2.6-.9-4-.9Z" /></svg>
+        My Puppy
+      </a>
+      <a class="nav-link" href="#">
+        <svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 8.4 8.4 0 0 1-3.9-.9L3 21l1.9-5.6A8.4 8.4 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.5 8.5 0 0 1 21 11.5Z" /></svg>
+        Messages
+      </a>
+      <a class="nav-link" href="#">
+        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M16 3v4M8 3v4M3 10h18" /></svg>
+        Appointments
+      </a>
+      <a class="nav-link" href="#">
+        <svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" /><path d="M14 3v5h5" /></svg>
+        Documents
+      </a>
     </div>
 
     <div class="nav-group">
       <div class="nav-group-label">Account</div>
-      <a class="nav-link" href="#">⚙️ Settings</a>
-      <button class="nav-link" id="signOutBtn">↩ Sign out</button>
+      <a class="nav-link" href="#">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z" /></svg>
+        Settings
+      </a>
+      <button class="nav-link" id="signOutBtn">
+        <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" /><path d="M16 17l5-5-5-5" /><path d="M21 12H9" /></svg>
+        Sign out
+      </button>
     </div>
 
     <div class="sidebar-spacer"></div>
@@ -80,8 +103,14 @@
         <h1>Your household, at a glance</h1>
       </div>
       <div class="header-actions">
-        <a href="#" class="btn btn-outline">💬 Message the Breeder</a>
-        <a href="#" class="btn btn-solid">📅 Book a Visit</a>
+        <a href="#" class="btn btn-outline">
+          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 8.4 8.4 0 0 1-3.9-.9L3 21l1.9-5.6A8.4 8.4 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.5 8.5 0 0 1 21 11.5Z" /></svg>
+          Message the Breeder
+        </a>
+        <a href="#" class="btn btn-solid">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M16 3v4M8 3v4M3 10h18" /></svg>
+          Book a Visit
+        </a>
       </div>
     </div>
 
@@ -160,28 +189,36 @@
           </div>
 
           <div class="activity-row">
-            <span class="icon">💬</span>
+            <span class="icon">
+              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 8.4 8.4 0 0 1-3.9-.9L3 21l1.9-5.6A8.4 8.4 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.5 8.5 0 0 1 21 11.5Z" /></svg>
+            </span>
             <div>
               <p>The breeder shared 4 new photos of Buttercup.</p>
               <small>Yesterday · 4:12 PM</small>
             </div>
           </div>
           <div class="activity-row">
-            <span class="icon">♡</span>
+            <span class="icon">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 3 5 6.5 5c2 0 3.3 1 4.5 2.5C12.2 6 13.5 5 15.5 5 19 5 21.5 8.5 19.5 12.5 17 16.65 12 21 12 21Z" /></svg>
+            </span>
             <div>
               <p>Second round of vaccinations completed and logged.</p>
               <small>Aug 14 · Vet Visit</small>
             </div>
           </div>
           <div class="activity-row">
-            <span class="icon">📅</span>
+            <span class="icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M16 3v4M8 3v4M3 10h18" /></svg>
+            </span>
             <div>
               <p>Home visit scheduled for Aug 24, 2:00 PM.</p>
               <small>Aug 11 · Appointment</small>
             </div>
           </div>
           <div class="activity-row">
-            <span class="icon">📄</span>
+            <span class="icon">
+              <svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" /><path d="M14 3v5h5" /></svg>
+            </span>
             <div>
               <p>Puppy contract and health guarantee uploaded.</p>
               <small>Aug 2 · Document</small>
@@ -199,17 +236,17 @@
           </div>
 
           <div class="check-row done">
-            <span class="check-dot">✓</span>
+            <span class="check-dot"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10" /></svg></span>
             <span class="label-text">Vet health exam</span>
             <span class="date">Jul 20</span>
           </div>
           <div class="check-row done">
-            <span class="check-dot">✓</span>
+            <span class="check-dot"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10" /></svg></span>
             <span class="label-text">First vaccination</span>
             <span class="date">Aug 3</span>
           </div>
           <div class="check-row done">
-            <span class="check-dot">✓</span>
+            <span class="check-dot"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10" /></svg></span>
             <span class="label-text">Second vaccination</span>
             <span class="date">Aug 14</span>
           </div>
