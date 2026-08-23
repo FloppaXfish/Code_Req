@@ -14,8 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = isset($_POST['password']) ? $_POST['password'] : '';
     $remember = isset($_POST['keep_signed_in']) ? true : false;
     
-    $validEmail = 'admin@dollhausroyale.com';
-    $validPassword = 'DollhausAdmin2026';
+    $validEmail = 'admin@123.com';
+    $validPassword = 'admin123';
     $validName = 'Renata';
     
     if (strtolower($email) === strtolower($validEmail) && $password === $validPassword) {
