@@ -1,8 +1,11 @@
 <?php
 session_start();
 
+require_once '../config/database.php';
+$db = Database::getInstance();
+
 if (isset($_SESSION['dr_admin_signed_in']) && $_SESSION['dr_admin_signed_in'] === true) {
-    header('Location: ../dashboard/dashboard.php');
+    header('Location: dashboard.php');
     exit();
 }
 
@@ -14,24 +17,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = isset($_POST['password']) ? $_POST['password'] : '';
     $remember = isset($_POST['keep_signed_in']) ? true : false;
     
-    $validEmail = 'admin@123.com';
-    $validPassword = 'admin123';
-    $validName = 'Renata';
-    
-    if (strtolower($email) === strtolower($validEmail) && $password === $validPassword) {
-        $_SESSION['dr_admin_signed_in'] = true;
-        $_SESSION['dr_admin_name'] = $validName;
-        $_SESSION['dr_admin_email'] = $email;
-        
-        if ($remember) {
-            setcookie('dr_admin_email', $email, time() + (86400 * 30), '/'); // 30 days
-        }
-        
-        header('Location: ../dashboard/dashboard.php');
-        exit();
+    if (empty($email) || empty($password)) {
+        $loginError = 'Please enter both email and password.';
     } else {
-        $loginError = 'Incorrect email or password. Try the demo credentials below.';
-        $rememberEmail = $email;
+        $admin = $db->fetchOne('SELECT * FROM admin_users WHERE email = ? AND is_active = 1', [$email]);
+        
+        if ($admin && password_verify($password, $admin['password_hash'])) {
+            $_SESSION['dr_admin_signed_in'] = true;
+            $_SESSION['dr_admin_id'] = $admin['admin_id'];
+            $_SESSION['dr_admin_name'] = $admin['full_name'];
+            $_SESSION['dr_admin_email'] = $admin['email'];
+            $_SESSION['dr_admin_role'] = $admin['role'];
+            
+            if ($remember) {
+                setcookie('dr_admin_email', $email, time() + (86400 * 30), '/');
+                setcookie('dr_admin_remember', '1', time() + (86400 * 30), '/');
+            }
+            
+            header('Location: dashboard.php');
+            exit();
+        } else {
+            $loginError = 'Incorrect email or password. Try the demo credentials below.';
+            $rememberEmail = $email;
+        }
     }
 }
 
@@ -60,8 +68,7 @@ if (empty($rememberEmail) && isset($_COOKIE['dr_admin_email'])) {
     </div>
 
     <div class="login-hero">
-   
-      <h1>Every litter, every family,<br>every detail — in one ledger.</h1>
+      <h1>Every litter, every family,<br />every detail — in one ledger.</h1>
       <p>Sign in to manage reservations, health records, and messages across the kennel.</p>
     </div>
 
@@ -76,16 +83,13 @@ if (empty($rememberEmail) && isset($_COOKIE['dr_admin_email'])) {
 
   <div class="login-form-side">
     <div class="login-form-card">
-      <div class="eyebrow">
-       
-      </div>
+      <div class="eyebrow"></div>
       <h2>Sign in</h2>
-        <p>Every litter, every family,
-every detail — in one ledger.</p>
+      <p>Every litter, every family, every detail — in one ledger.</p>
 
       <?php if ($loginError): ?>
       <div class="login-error show" id="loginError">
-        <?php echo htmlspecialchars($loginError); ?>
+        <?= htmlspecialchars($loginError) ?>
       </div>
       <?php else: ?>
       <div class="login-error" id="loginError">
@@ -96,7 +100,7 @@ every detail — in one ledger.</p>
       <form method="POST" action="login.php" id="loginForm">
         <div class="field">
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="you@dollhausroyale.com" autocomplete="username" required value="<?php echo htmlspecialchars($rememberEmail); ?>" />
+          <input type="email" id="email" name="email" placeholder="you@dollhausroyale.com" autocomplete="username" required value="<?= htmlspecialchars($rememberEmail) ?>" />
         </div>
 
         <div class="field field-password">
@@ -109,22 +113,22 @@ every detail — in one ledger.</p>
         </div>
 
         <div class="field-row">
-          <label><input type="checkbox" name="keep_signed_in" id="keepSignedIn" <?php echo isset($_COOKIE['dr_admin_email']) ? 'checked' : ''; ?> /> Keep me signed in</label>
-        
+          <label><input type="checkbox" name="keep_signed_in" id="keepSignedIn" <?= isset($_COOKIE['dr_admin_email']) ? 'checked' : '' ?> /> Keep me signed in</label>
+          <a href="#" onclick="alert('Contact your administrator to reset your password.'); return false;">Forgot password?</a>
         </div>
 
         <button type="submit" class="btn btn-solid">Sign in to Admin</button>
       </form>
 
-      
-    
+      <div style="margin-top:1.5rem;padding:12px 16px;background:#f8f4ed;border-radius:8px;font-size:0.8rem;color:#5C4A3E;font-family:'Inter',sans-serif;text-align:center;">
+        <strong>Demo:</strong> admin@123.com / admin123
+      </div>
     </div>
   </div>
 
 </div>
 
 <script>
-
   const pwInput = document.getElementById('password');
   const toggleBtn = document.getElementById('togglePw');
   const eyeIcon = toggleBtn.querySelector('.icon-eye');
@@ -138,18 +142,21 @@ every detail — in one ledger.</p>
     eyeOffIcon.style.display = isHidden ? 'block' : 'none';
   });
 
-
   const emailInput = document.getElementById('email');
   const passwordInput = document.getElementById('password');
   const errorBox = document.getElementById('loginError');
   
-  emailInput.addEventListener('input', function() {
-    errorBox.classList.remove('show');
-  });
+  if (emailInput) {
+    emailInput.addEventListener('input', function() {
+      errorBox.classList.remove('show');
+    });
+  }
   
-  passwordInput.addEventListener('input', function() {
-    errorBox.classList.remove('show');
-  });
+  if (passwordInput) {
+    passwordInput.addEventListener('input', function() {
+      errorBox.classList.remove('show');
+    });
+  }
 </script>
 
 </body>
