@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 setcookie('dr_admin_remember', '1', time() + (86400 * 30), '/');
             }
             
-            header('Location: dashboard.php');
+            header('Location: ../dashboard/dashboard.php');
             exit();
         } else {
             $loginError = 'Incorrect email or password. Try the demo credentials below.';
