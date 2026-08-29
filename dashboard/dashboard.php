@@ -532,7 +532,7 @@ $recentApplications = $db->fetchAll('SELECT * FROM puppy_applications ORDER BY c
         </div>
 
         <div class="content-grid">      
-            <!-- Left Column -->
+            <!-- Left Columsn -->
             <div>
                 <!-- Monthly Trends Chart -->
                 <div class="card" style="margin-bottom:24px;">
