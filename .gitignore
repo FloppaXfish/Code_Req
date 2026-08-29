@@ -7,3 +7,8 @@ landingpage/
 vendor/
 *composer.json
 *composer.lock
+*.php
+*.css
+*.png
+composer.json
+composer.lock
